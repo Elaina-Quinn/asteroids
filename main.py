@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 def main():
     pygame.init()
@@ -8,6 +9,9 @@ def main():
     # fps variables
     clock = pygame.time.Clock()
     dt = 0
+
+    # player initilization
+    player = Player((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))
 
     # infinite while loop to run asteroids continuously
     while True:
@@ -18,6 +22,7 @@ def main():
 
         screen.fill((0, 0, 0))
         pygame.display.flip()
+        player.draw(screen)
 
         # fps limit
         dt = (clock.tick(60)) / 1000
