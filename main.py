@@ -10,6 +10,12 @@ def main():
     clock = pygame.time.Clock()
     dt = 0
 
+    # creating groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers = (updatable, drawable)
+
     # player initilization
     player = Player((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))
 
@@ -21,8 +27,10 @@ def main():
                 return
 
         screen.fill((0, 0, 0))
-        player.update(dt)
-        player.draw(screen)
+        for i in updatable:
+            i.update(dt)
+        for j in drawable:
+            j.draw(screen)
         pygame.display.flip()
 
         # fps limit
