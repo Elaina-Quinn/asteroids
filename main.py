@@ -54,7 +54,7 @@ def main():
                 sys.exit()
             for s in shots:
                 if h.collision(s):
-                    h.kill()
+                    h.split()
                     s.kill()
 
 
