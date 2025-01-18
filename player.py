@@ -52,4 +52,3 @@ class Player(CircleShape):
             self.shoot()
         if (self.timer > 0):
             self.timer -= dt
-        print(dt)

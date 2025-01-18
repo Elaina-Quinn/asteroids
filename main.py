@@ -52,6 +52,10 @@ def main():
             if player.collision(h):
                 print ("Game over!")
                 sys.exit()
+            for s in shots:
+                if h.collision(s):
+                    h.kill()
+                    s.kill()
 
 
         # fps limit
